@@ -1,9 +1,12 @@
-git push#  GoBarber
-
-
+#  GoBarber
 
 ## Preview
-![alt text](https://github.com/alektobias/GoBarber/blob/master/images/signin-web.png "Logo Title Text 1")
+### Sign In on Web
+![alt text](https://github.com/alektobias/GoBarber/blob/master/images/signin-web.png "Sign in Web")
+### Sign in Mobile
+![alt text](https://github.com/alektobias/GoBarber/blob/master/images/signin.png "Sign in Mobile")
+### Dashboard 
+![alt text](https://github.com/alektobias/GoBarber/blob/master/images/dashboard-web.png "Dashboard")
 
 ## Technologies
   - Back-end
@@ -22,7 +25,7 @@ git push#  GoBarber
     - Redux
     - Redux Persist
     - Redux Saga
-    - Styled Coponents
+    - Styled Components
     - Polished
 
   - Mobile
@@ -31,5 +34,8 @@ git push#  GoBarber
     - Redux
     - Redux Persist
     - Redux Saga
-    - Styled Coponents
+    - Styled Components
     - Polished
+
+## Author
+- Alek Tobias
