@@ -24,12 +24,12 @@ module.exports = {
   ],
   rules: {
     "prettier/prettier": "error",
-    "import/extensions": [
-      "error", "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ]
+    "import/extensions": ["error", "ignorePackages", {
+			"js": "never",
+			"ts": "never",
+			"tsx": "never",
+			"mts": "never"
+		}]
   },
   settings: {
     "import/resolver": {
