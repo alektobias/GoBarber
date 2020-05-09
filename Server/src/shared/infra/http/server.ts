@@ -12,7 +12,7 @@ const server = express();
 
 server.use(cors());
 server.use(express.json());
-server.use('/files', express.static(upload.directory));
+server.use('/files', express.static(upload.uploadsFolder));
 server.use(routes);
 server.use(
   (err: Error, request: Request, response: Response, _: NextFunction) => {
