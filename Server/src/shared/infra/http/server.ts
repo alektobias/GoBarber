@@ -9,9 +9,11 @@ import '@shared/infra/typeorm';
 import '@shared/container';
 import upload from '@config/upload';
 import { errors } from 'celebrate';
+import rateLimiter from './middlewares/rateLimiter';
 
 const server = express();
 
+server.use(rateLimiter);
 server.use(cors());
 server.use(express.json());
 server.use('/files', express.static(upload.uploadsFolder));
