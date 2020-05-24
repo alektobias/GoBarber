@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { useRef, useCallback, useState } from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { FiLogIn, FiMail } from 'react-icons/fi';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -26,41 +26,43 @@ const ForgotPassword: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const { addToast } = useToast();
 
-  const handleSubmit = useCallback(async (data: ForgotPasswordFormData) => {
-    try {
-      setLoading(true);
-      const schema = Yup.object().shape({
-        email: Yup.string()
-          .email('Digite um e-mail válido')
-          .required('E-mail Obrigatório'),
-      });
-      await schema.validate(data, { abortEarly: false });
+  const handleSubmit = useCallback(
+    async (data: ForgotPasswordFormData) => {
+      try {
+        setLoading(true);
+        const schema = Yup.object().shape({
+          email: Yup.string()
+            .email('Digite um e-mail válido')
+            .required('E-mail Obrigatório'),
+        });
+        await schema.validate(data, { abortEarly: false });
 
-      // Recuperação de senha
-      await api.post('/password/forgot', { email: data.email });
+        await api.post('/password/forgot', { email: data.email });
 
-      formRef.current?.setErrors({});
+        formRef.current?.setErrors({});
 
-      addToast({
-        type: 'success',
-        title: 'Email de reuperação enviado',
-        description:
-          'Enviamos um email para confirma a recuperação de senha, cheque sua caixa de entrada',
-      });
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        formRef.current?.setErrors(getValidationErrors(err));
+        addToast({
+          type: 'success',
+          title: 'Email de reuperação enviado',
+          description:
+            'Enviamos um email para confirma a recuperação de senha, cheque sua caixa de entrada',
+        });
+      } catch (err) {
+        if (err instanceof Yup.ValidationError) {
+          formRef.current?.setErrors(getValidationErrors(err));
+        }
+        addToast({
+          type: 'error',
+          title: 'Erro na recuperação de senha',
+          description:
+            'Ocorreu um erro ao tentar realizar a recuperação de senha, tente novamente.',
+        });
+      } finally {
+        setLoading(false);
       }
-      addToast({
-        type: 'error',
-        title: 'Erro na recuperação de senha',
-        description:
-          'Ocorreu um erro ao tentar realizar a recuperação de senha, tente novamente.',
-      });
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+    },
+    [addToast],
+  );
 
   return (
     <Container>
