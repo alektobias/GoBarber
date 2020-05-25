@@ -13,19 +13,19 @@ import Button from '../../components/Button';
 import api from '../../services/api';
 import { useToast } from '../../hooks/toast';
 
-interface SignUpFormData {
+interface ProfileFormData {
   email: string;
   name: string;
   password: string;
 }
 
-const SignUp: React.FC = () => {
+const Profile: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
   const history = useHistory();
 
   const handleSubmit = useCallback(
-    async (data: SignUpFormData) => {
+    async (data: ProfileFormData) => {
       try {
         const schema = Yup.object().shape({
           name: Yup.string().required('Nome Obrigatório'),
@@ -84,4 +84,5 @@ const SignUp: React.FC = () => {
     </Container>
   );
 };
-export default SignUp;
+
+export default Profile;
