@@ -1,12 +1,25 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { shade } from 'polished';
-
-import backgroundSignUp from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh;
-  display: flex;
-  align-items: stretch;
+
+  > header {
+    height: 144px;
+    background: #28262e;
+    display: flex;
+    align-items: center;
+    div {
+      max-width: 1120px;
+      margin: 0 auto;
+      width: 100%;
+      svg {
+        color: #999591;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -15,60 +28,53 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
-`;
-const appearFromRight = keyframes`
-from{
-  opacity: 0;
-  transform: translateX(50px);
+  margin: -176px auto 0;
 
- }
- to {
-  opacity: 1;
-  transform: translateX(0);
- }
-`;
-export const AnimatedContainer = styled.div`
- display: flex;
-flex-direction: column;
-align-items: center;
-animation: ${appearFromRight} 1s;
-form {
-    margin: 80px 0;
+  form {
+    margin: 80px auto 0;
     width: 340px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     h1 {
-      margin-bottom: 24px;
-    }
-    a {
-      color: #f4dee8;
-      display: block;
-      margin-top: 24px;
-      text-decoration: none;
-      &:hover {
-        color: ${shade(0.2, '#F4DEE8')};
-      }
-    }
-  }
-  & > a {
-      color: #F4DEE8;
-      display: block;
-      margin-top: 24px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      svg {
-        margin-right: 16px;
-      }
-      &:hover {
-        color: ${shade(0.2, '#F4DEE8')};
-      }
+      margin-bottom: 20px;
+      text-align: left;
     }
   }
 `;
-
-export const Background = styled.div`
-  flex: 1;
-  background: url(${backgroundSignUp}) no-repeat center;
-  background-size: cover;
+export const AvatarInput = styled.div`
+  margin-bottom: 32px;
+  position: relative;
+  align-self: center;
+  img {
+    width: 186px;
+    height: 186px;
+    border-radius: 50%;
+  }
+  label {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ff9000;
+    border: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    right: 0;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input {
+      display: none;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #312e38;
+    }
+    &:hover {
+      background: ${shade(0.2, '#ff9000')};
+    }
+  }
 `;
