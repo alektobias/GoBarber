@@ -1,6 +1,7 @@
 #  GoBarber
 
-## Preview
+Demo project to barber shops schedules
+
 ### Sign In on Web
 ![alt text](Logon.png)
 ### Dashboard 
