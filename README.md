@@ -2,18 +2,15 @@
 
 ## Preview
 ### Sign In on Web
-![alt text](https://github.com/alektobias/GoBarber/blob/master/images/signin-web.png "Sign in Web")
-### Sign in Mobile
-![alt text](https://github.com/alektobias/GoBarber/blob/master/images/signin.png "Sign in Mobile")
+![alt text](Logon.png)
 ### Dashboard 
-![alt text](https://github.com/alektobias/GoBarber/blob/master/images/dashboard-web.png "Dashboard")
+![alt text](Dashboard.png)
 
 ## Technologies
   - Back-end
     - Node JS
     - Express
-    - Sequelize
-    - Mongoose
+    - TypeORM
     - PostgreSQL
     - MongoDB
     - Redis
@@ -22,18 +19,6 @@
   - Front-end
     - React JS
     - React Router Dom
-    - Redux
-    - Redux Persist
-    - Redux Saga
-    - Styled Components
-    - Polished
-
-  - Mobile
-    - React Native
-    - React Navigation
-    - Redux
-    - Redux Persist
-    - Redux Saga
     - Styled Components
     - Polished
 
